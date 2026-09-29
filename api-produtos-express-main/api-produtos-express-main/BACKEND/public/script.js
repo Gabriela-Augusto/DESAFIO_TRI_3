@@ -26,7 +26,7 @@ class Produto {
     }
 }
 
-const API_URL = 'https://desafio-tri-3-qyxw3ow6j-gabi-0198.vercel.app/';
+const API_URL = 'https://desafio-tri-3-git-main-gabi-0198.vercel.app/';
 
 async function renderizarTabela() {
     try {
