@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
+    <title>Cadastro de Produtos com Autenticação</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,46 @@
 <body>
     <div class="container">
         <img src="./IMAGENS/1000115458.png" alt="Minha foto" class="foto-perfil">
-        <h1>Cadastro de Produtos</h1>
+
+        <!-- BLOCO DE AUTENTICAÇÃO -->
+        <div id="secao-auth" class="card-auth">
+            <div id="painel-login">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Seu E-mail" required>
+                    <input type="password" id="login-senha" placeholder="Sua Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+                <p>Não tem conta? <a href="#" id="link-ir-cadastro">Cadastre-se</a></p>
+            </div>
+
+            <div id="painel-registro" style="display: none;">
+                <h2>Criar Conta</h2>
+                <form id="registro-form">
+                    <input type="text" id="reg-nome" placeholder="Seu Nome" required>
+                    <input type="email" id="reg-email" placeholder="Seu E-mail" required>
+                    <input type="password" id="reg-senha" placeholder="Sua Senha" required>
+                    <select id="reg-perfil">
+                        <option value="cliente">Cliente (Apenas Leitura)</option>
+                        <option value="admin">Administrador (Acesso Total)</option>
+                    </select>
+                    <button type="submit">Cadastrar</button>
+                </form>
+                <p>Já tem conta? <a href="#" id="link-ir-login">Fazer Login</a></p>
+            </div>
+        </div>
+
+        <!-- BARRA DO USUÁRIO LOGADO -->
+        <div id="secao-usuario" style="display: none;" class="bar-usuario">
+            <p>Conectado como: <strong id="user-nome"></strong> (<span id="user-perfil"></span>)</p>
+            <button id="btn-logout" class="btn-secondary">Sair</button>
+        </div>
+
+        <hr>
+
+        <h1>Gerenciamento de Produtos</h1>
+
+        <!-- FORMULÁRIO DE PRODUTO (RESTRITO PARA ADMIN) -->
         <form id="produto-form">
             <label>Nome:</label>
             <input type="text" id="nome" required>
@@ -25,7 +64,7 @@
             <label>Quantidade:</label>
             <input type="number" id="quantidade" min="1" step="1" required>
 
-            <button type="submit">Adicionar Produto</button>
+            <button type="submit" id="btn-salvar-produto">Adicionar Produto</button>
         </form>
 
         <button id="limpar-tabela">Limpar tabela</button>
