@@ -1,93 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Login</title>
+    <title>Cadastro de Produtos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<div class="container">
-    <h1>Cadastro de Produtos</h1>
-
-    <section id="auth-section">
-        <div class="tabs">
-            <button type="button" id="tab-login" class="tab active">Login</button>
-            <button type="button" id="tab-registro" class="tab">Cadastro</button>
-        </div>
-
-        <form id="login-form">
-            <h2>Entrar</h2>
-
-            <label for="login-email">Email:</label>
-            <input type="email" id="login-email" required>
-
-            <label for="login-senha">Senha:</label>
-            <input type="password" id="login-senha" required minlength="6">
-
-            <button type="submit">Entrar</button>
-        </form>
-
-        <form id="registro-form" class="hidden">
-            <h2>Criar conta</h2>
-
-            <label for="registro-nome">Nome:</label>
-            <input type="text" id="registro-nome" required>
-
-            <label for="registro-email">Email:</label>
-            <input type="email" id="registro-email" required>
-
-            <label for="registro-senha">Senha:</label>
-            <input type="password" id="registro-senha" required minlength="6">
-
-            <button type="submit">Cadastrar</button>
-        </form>
-
-        <p id="auth-message" class="message"></p>
-    </section>
-
-    <section id="app-section" class="hidden">
-        <div class="user-bar">
-            <span id="usuario-logado"></span>
-            <button id="logout" type="button">Sair</button>
-        </div>
-
+    <div class="container">
+        <img src="./IMAGENS/1000115458.png" alt="Minha foto" class="foto-perfil">
+        <h1>Cadastro de Produtos</h1>
         <form id="produto-form">
-            <h2>Novo produto</h2>
-
-            <label for="nome">Nome:</label>
+            <label>Nome:</label>
             <input type="text" id="nome" required>
-
-            <label for="preco">Preço:</label>
+            
+            <label>Preço:</label>
             <input type="number" id="preco" min="0.01" step="0.01" required>
-
-            <label for="quantidade">Quantidade:</label>
+            
+            <label>Quantidade:</label>
             <input type="number" id="quantidade" min="1" step="1" required>
 
-            <button type="submit">Adicionar produto</button>
+            <button type="submit">Adicionar Produto</button>
         </form>
 
-        <button id="limpar-tabela" type="button" class="admin-only hidden">
-            Limpar tabela
-        </button>
+        <button id="limpar-tabela">Limpar tabela</button>
 
-        <h3 id="total-estoque">Total em estoque: R$ 0,00</h3>
+        <h3 id="total-estoque">Total em Estoque: R$ 0.00</h3>
 
         <table id="tabela-produtos">
             <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Preço</th>
-                <th>Quantidade</th>
-                <th>Total item</th>
-                <th>Ações</th>
-            </tr>
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Total item</th>
+                    <th>Ações</th>
+                </tr>
             </thead>
             <tbody></tbody>
         </table>
-    </section>
-</div>
-
-<script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
